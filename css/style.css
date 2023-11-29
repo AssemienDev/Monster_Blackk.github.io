@@ -214,6 +214,9 @@ footer{
         margin-left: 26.5%;
         width: 50%;
     }
+    footer{
+      margin-left: -20px;
+    }
     .consigne{
         margin-left: 52%;
     }
