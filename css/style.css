@@ -312,3 +312,45 @@ footer{
       animation: 1s spin linear infinite;
     }
  }
+
+ @media (max-width: 370px) { 
+  footer{
+    margin-left: -20px;
+  }
+  .info1{
+    margin-left: 8%;
+    font-size: large;
+  }
+  .photo-box{
+    width: 80%;
+    margin-left: 8%;
+  }
+  input[type="text"]{
+    border-color: #707070;
+    width: 100%;
+    height: 55px;
+    border-radius: 15px;
+  }
+  .photo-box-interieur{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .photo-text{
+    margin-left: 35%;
+  }
+  input[type="file"]{
+    margin-left: 1%;
+    margin-top: 50%;
+  }
+  input[type="submit"]{
+    margin-left: 30.4%;
+    width: 37%;
+  }
+  #logo-haut{
+    margin-left: -23%;
+    width: 90px;
+  }
+  .liens{
+    margin-left: -10%;
+  }
+ }
