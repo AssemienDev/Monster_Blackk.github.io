@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFest Poster Page</title>
+    <link rel="icon" href="image/logo.svg">
+    
+    <!--Utilisation des CDNS de Boostrap et font-awesome animate on scroll(AOS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--Code Css-->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
+</head>
+<body>
+
+    <!--barre de navigation contenant le logo et les liens des pages-->
+    <nav class="navbar navbar-expand shadow-sm" data-aos="fade-up" data-aos-duration="600">
+        <a href="#" class="navbar-item mx-4">
+            <img src="image/logo.svg" class="w-100 d-block d-lg-block d-sm-block d-md-block" height="55" alt="logo_dev_fest">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link m-sm-3 m-md-3">Acceuil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/" class="nav-link m-sm-3 m-md-3">À propos</a>
+                </li>
+                <li class="nav-item bg-black rounded-4 m-sm-3 m-md-3">
+                    <a href="http://urlz.fr/oDZc" class="nav-link couleur-rsvp mx-2">RSVP <i class="fa-solid fa-arrow-right mx-2"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--partie principale-->
+    <div class="container">
+       <div class="my-5">
+            <h1>GENERATEUR <br><span>D'IMAGE DE PROFIL</span></h1>
+       </div>
+       <div class="my-5">
+        <p class="info1">(Participer, Apprenez, Apprécier)</p>
+       </div>
+    </div>
+    <div style="background-color: #222;" class="my-4">
+        <div class="p-4">
+            <h2 style="color: #36a853;" class="mx-5 fw-bold">Personnaliser votre DP pour la DevFest</h2>
+        </div>
+
+        <!--creation du formulaire-->
+        <form action="#" id="formulaire" onsubmit="generer(event)" method="post">
+
+            <!--Element-->
+            <div style="display: none;">
+                <img id="fond" src="image/devfest_dpgenrator.png" width="700" height="700">
+                <img id="new" src="#" width="300">
+                <img id="fond2" src="image/devfest_dpgenrator.png" width="700" height="700">
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="nom"class="mx-1" style="color: #707070; font-size: x-large; font-weight: bold;">Nom</label>
+                            </div>
+                            <div class="col my-2">
+                                <input type="text" style="background-color: transparent; color: white;" name="nom" id="nom" maxlength="12" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-12 ">
+                                <label for="prenom" class="mx-1" style="color: #707070; font-size: x-large; font-weight: bold;">Prénom</label>
+                            </div>
+                            <div class="col my-2">
+                                <input type="text" style="background-color: transparent; color: white;"  name="prenom" maxlength="12" id="prenom" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-5">
+                    <label class="photo-text" style="color:#707070; font-size: x-large; font-weight: bold;">Photo</label>
+                    <div class="my-3 photo-box">
+                        <div class="photo-box-interieur">
+                            <input type="file" id="fichier" onchange="verifierFormat(event)" required>
+                        </div>
+                    </div>
+                    <p style="color: #4b86f8;"  class="consigne">Telecharger une image(jpg ou png)</p>
+                </div class="p-5">
+                <input type="submit" class="btn rounded-4" value="SOUMETTRE">
+            </div>
+        </form>
+    </div>
+
+    <!--Creation du footer-->
+    <footer data-aos="fade-down" data-aos-duration="800">
+
+        <div class="container">
+        <div class="row bas autre1">
+
+            <!--logo et info-->
+            <div class="col-lg-4 col-sm-3 mx-n5 ">
+                <img src="image/logo.svg" id="logo-bas" class="w-50 mx-5 my-4" alt="logo_dev_fest">
+                <p class="mx-1 my-4 mx-sm-5" style="color: #222">&copy; 2023 Google - Évènement à venir</p>
+            </div>
+
+            <!--liens utiles-->
+            <div class="col-4">
+                <ul class="lien-footer my-4 mx-5">
+                    <li><a href="index.html">
+                        Acceuil
+                    </a></li>
+                    <li class="mt-4"><a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/">
+                        À propos de la DevFest
+                    </a></li>
+                    <li class="mt-4"><a href="index.html">
+                        Generateur d'image
+                    </a></li>
+                </ul>
+            </div>
+
+            <!--Différent reseaux sociaux-->
+            <div class="col-4 social">
+                <h2 class="mx-5 text-center fw-bold " style="color: #222;">Social</h2>
+            <div class="mx-5">
+                <div class="autre">
+                        <a href="#" class="al1" style="color: #222; text-decoration: none;">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class=" al2 my-sm-5" style="color: #222; text-decoration: none;">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class=" al3  my-sm-5" style="color: #222; text-decoration: none;">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--Un peu de JS-->
+    <script>
+        //initialise AOS
+        AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
