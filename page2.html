@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFest Poster Page</title>
+    <link rel="icon" href="image/logo.svg">
+    
+    <!--Utilisation des CDNS de Boostrap et font-awesome animate on scroll(AOS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <!--Code Css-->
+</head>
+<body>
+
+        <!--Barre de navigation -->
+        <nav class="bg-white"id="navbar">
+            <div class="container mx-auto flex justify-between items-center py-4 px-6">
+                <a href="#" class="navbar-item">
+                    <img src="image/logo.svg" class="block h-8 md:h-12" id="logo-haut" alt="logo_dev_fest" >
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://developers.google.com/community/devfest?hl=fr" class="nav-link">À propos</a>
+                    <a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/" class="nav-link bg-black rounded-3xl text-white px-4 py-3 flex items-center">
+                        Prendre son ticket <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <!-- Burger Menu Icon -->
+                    <button id="burger-menu" class="block md:hidden">
+                        <i class="fas fa-bars" style="font-size: 25px;"></i>
+                    </button>
+                </div>
+    
+            </div>
+            <!-- Hidden Menu for Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <ul class="text-center">
+                    <li><a href="https://developers.google.com/community/devfest?hl=fr">À propos</a></li>
+                    <li><a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/">Prendre son ticket</a></li>
+                </ul>
+            </div>
+        </nav>
+    
+
+   <!--partie principale-->
+<div class="container mx-auto py-8">
+    <div class="text-center">
+        <h1 class="font-bold text-3xl md:text-5xl my-4" data-aos="fade-up-left" data-aos-duration="850">NOUS Y <br> <span class="text-blue-500">SOMMMES</span></h1>
+        <p class="font-semibold text-lg md:text-xl mb-6" data-aos="fade-down-right" data-aos-duration="850">Générer et partager votre <br> DP <span class="italic">DevFest</span> Abidjan Treichville 2023</p>
+        <div class="my-6" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="#" id="poster-afficher" alt="Poster_Devfest" class="w-full md:w-3/4 mx-auto rounded-lg shadow-md">
+        </div>
+        <!-- Les boutons d'action -->
+        <div class="my-6 flex justify-center space-x-4">
+            <a href="#" id="downloadLink" download="#" onclick="downloadImage()" class="px-4 py-2 bg-gray-800 text-white rounded-md transition duration-300 hover:bg-gray-700"><i class="fa-solid fa-download"></i> Télécharger</a>
+            <a href="index.html" class="px-4 py-2 bg-gray-800 text-white rounded-md transition duration-300 hover:bg-gray-700"><i class="fa-solid fa-rotate-right"></i> Régénérer</a>
+        </div>
+    </div>
+</div>
+
+    <!--Creation du footer-->
+    <footer class="bg-gray-100 py-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center md:text-left">
+                    <img src="image/logo.svg" class="block mx-auto md:mx-0 h-12 mb-4" alt="logo_dev_fest">
+                    <p class="text-gray-600">&copy; DevFest Treichville GDG Cloud Abidjan Edition 2023. All Rights Reserved.</p>
+                </div>
+                <div class="text-center">
+                    <h2 class="text-xl font-semibold mb-4">Liens utiles</h2>
+                    <ul class="text-gray-600">
+                        <li class="mb-2"><a href="#" class="hover:text-gray-800">RSVP</a></li>
+                        <li><a href="https://developers.google.com/community/devfest?hl=fr">À propos</a></li>
+
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <h2 class="text-xl font-semibold mb-4">Réseaux sociaux</h2>
+                    <div class="flex justify-center  space-x-4">
+                        <a href="https://twitter.com/GDGCloudAbidjan" class="text-gray-600 hover:text-gray-800"><i class="fab fa-twitter"></i></a>
+                        <a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/" class="text-gray-600 hover:text-gray-800"><i class="fab fa-mail-reply"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--Un peu de JS-->
+    <script>
+        //initialise AOS
+        AOS.init();
+
+        //charge l'image à afficher au démarrage de la page
+        window.addEventListener('load',affiche())
+
+
+        function affiche(){
+        //recupere l'image et le texte stocké dans le localStorage
+        let imageData = localStorage.getItem('imageData');
+        let texteData = localStorage.getItem('texteData');
+
+        //verifie que l'image est recuperer et la place dans la partie ou l'on doit l'afficher
+        if (imageData) {
+            let receivedImage = document.getElementById('poster-afficher');
+            receivedImage.src = imageData;
+        }
+
+
+        //Mettre à jour le lien de téléchargement
+        let downloadLink = document.getElementById('downloadLink');
+        downloadLink.download=texteData+"-devfest-2023.png"
+        downloadLink.href = imageData;
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
