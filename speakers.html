@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Speakers</title>
+</head>
+<body>
+     <!--Barre de navigation -->
+     <nav class="bg-white"id="navbar">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <a href="#" class="navbar-item">
+                <img src="image/logo.svg" class="block h-8 md:h-12" id="logo-haut" alt="logo_dev_fest" >
+            </a>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://developers.google.com/community/devfest?hl=fr" class="nav-link">À propos</a>
+                <a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/" class="nav-link bg-black rounded-3xl text-white px-4 py-3 flex items-center">
+                    Prendre son ticket <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <!-- Burger Menu Icon -->
+                <button id="burger-menu" class="block md:hidden">
+                    <i class="fas fa-bars" style="font-size: 25px;"></i>
+                </button>
+            </div>
+
+        </div>
+        <!-- Hidden Menu for Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <ul class="text-center">
+                <li><a href="https://developers.google.com/community/devfest?hl=fr">À propos</a></li>
+                <li><a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/">Prendre son ticket</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <footer class="bg-gray-100 py-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center md:text-left">
+                    <img src="image/logo.svg" class="block mx-auto md:mx-0 h-12 mb-4" alt="logo_dev_fest">
+                    <p class="text-gray-600">&copy; DevFest Treichville GDG Cloud Abidjan Edition 2023. All Rights Reserved.</p>
+                </div>
+                <div class="text-center">
+                    <h2 class="text-xl font-semibold mb-4">Liens utiles</h2>
+                    <ul class="text-gray-600">
+                        <li class="mb-2"><a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/" class="hover:text-gray-800">RSVP</a></li>
+                        <li class="mb-2"><a href="./speakers.html" class="hover:text-gray-800">Speakers</a></li>
+                        <li><a href="https://developers.google.com/community/devfest?hl=fr">À propos</a></li>
+
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <h2 class="text-xl font-semibold mb-4">Réseaux sociaux</h2>
+                    <div class="flex justify-center  space-x-4">
+                        <a href="https://twitter.com/GDGCloudAbidjan" class="text-gray-600 hover:text-gray-800"><i class="fab fa-twitter"></i></a>
+                        <a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-devfest-cloud-abidjan-2023/" class="text-gray-600 hover:text-gray-800"><i class="fab fa-mail-reply"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
